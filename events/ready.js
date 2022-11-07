@@ -33,7 +33,7 @@ module.exports = async (client) => {
   }
 
   console.log(`${client.user.tag} Aktif!`);
-  client.user.setActivity("Lourity Code <3")
+  client.user.setActivity("7/24 Uptime")
 
 
   monitor.start();

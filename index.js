@@ -48,7 +48,7 @@ readdirSync('./events').forEach(e => {
 });
 
 
-client.login(TOKEN)
+client.login(process.env.token)
 
 // Uptime Modal
 const lourityModal = new ModalBuilder()
@@ -60,7 +60,7 @@ const u2 = new TextInputBuilder()
     .setStyle(TextInputStyle.Paragraph)
     .setMinLength(8)
     .setMaxLength(200)
-    .setPlaceholder('https://lourity-code.glitch.me')
+    .setPlaceholder('https://mercy-uptime.glitch.me')
     .setRequired(true)
 
 const row1 = new ActionRowBuilder().addComponents(u2);
@@ -76,7 +76,7 @@ const u3 = new TextInputBuilder()
     .setStyle(TextInputStyle.Paragraph)
     .setMinLength(8)
     .setMaxLength(200)
-    .setPlaceholder('https://lourity-code.glitch.me')
+    .setPlaceholder('https://mercy-uptime.glitch.me')
     .setRequired(true)
 
 const row2 = new ActionRowBuilder().addComponents(u3);
@@ -117,18 +117,21 @@ client.on('interactionCreate', async interaction => {
 
             .addComponents(
                 new Discord.ButtonBuilder()
+                    .setEmoji("<:r_yesil:1034210144260718633>")
                     .setLabel("Ekle")
                     .setStyle(Discord.ButtonStyle.Success)
                     .setCustomId("ekle")
             )
             .addComponents(
                 new Discord.ButtonBuilder()
+                    .setEmoji("<:r_cop:1033688525926830140>")
                     .setLabel("Sil")
                     .setStyle(Discord.ButtonStyle.Danger)
                     .setCustomId("sil")
             )
             .addComponents(
                 new Discord.ButtonBuilder()
+                    .setEmoji("<:r_link:1034158510851772567>")
                     .setLabel("Linklerim")
                     .setStyle(Discord.ButtonStyle.Primary)
                     .setCustomId("linklerim")
@@ -143,7 +146,7 @@ client.on('interactionCreate', async interaction => {
             .setTitle("Uptime Servisi")
             .setDescription("`・` Projelerinizi uptime etmek için **Ekle** butonuna tıklayın\n`・` Uptime edilen linklerinizi silmek için **Sil** butonuna tıklayın\n`・` Eklenen linklerini görmek için **Linklerim** butonuna tıklayın")
             .setThumbnail(server.iconURL({ dynamic: true }))
-            .setFooter({ text: "Lourity Code" })
+            .setFooter({ text: "Mercy Uptime" })
 
         interaction.guild.channels.cache.get(kanal).send({ embeds: [uptimeMesaj], components: [row] })
 
