@@ -178,7 +178,7 @@ client.on('interactionCreate', async interaction => {
 
         let link2 = louritydb.fetch(`uptimeLinks_${interaction.user.id}`, [])
 
-        let booster = "1006517580313399379" // Özel rol
+        let booster = "1039257858480554034" // Özel rol
 
         if (!link) return
 
