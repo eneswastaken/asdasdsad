@@ -29,7 +29,7 @@ module.exports = {
         const row1 = new Discord.ActionRowBuilder()
             .addComponents(
                 new Discord.ButtonBuilder()
-                    .setEmoji("🗑️")
+                    .setEmoji("<:r_cop:1033688525926830140>")
                     .setLabel("Sistemi Sıfırla")
                     .setStyle(Discord.ButtonStyle.Danger)
                     .setCustomId("sistemSıfırla")
@@ -38,8 +38,8 @@ module.exports = {
         const yetki = new Discord.EmbedBuilder()
             .setColor("Red")
             .setTitle("Yetersiz Yetki!")
-            .setDescription("> Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!")
-            .setFooter({ text: "Lourity Code" })
+            .setDescription("<:Kirmizi:1033666667181527062> ・ **Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!**")
+            .setFooter({ text: "Mercy Uptime" })
 
         const boolean = interaction.options.getBoolean('ayarla')
         const kanal = interaction.options.getChannel('kanal')
@@ -47,8 +47,8 @@ module.exports = {
         const ayarlandi = new Discord.EmbedBuilder()
             .setColor("Green")
             .setTitle("Başarıyla Ayarlandı!")
-            .setDescription(`Uptime sistemi başarıyla ${kanal} olarak **ayarlandı**!`)
-            .setFooter({ text: "Lourity Code" })
+            .setDescription(`Uptime Sistemi Başarıyla ${kanal} Olarak **Ayarlandı**!`)
+            .setFooter({ text: "Mercy Uptime" })
 
         if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) return interaction.reply({ embeds: [yetki], ephemeral: true })
 

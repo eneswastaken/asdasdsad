@@ -257,7 +257,7 @@ client.on('interactionCreate', async interaction => {
         louritydb.unpush(`uptimeLinks_${interaction.user.id}`, linkInput)
         louritydb.unpush(`uptimeLinks`, linkInput)
 
-        return interaction.reply({ content: "<:Yesil:1033666717974548500> ・ Linkin başarıyla sistemden **silindi!**", ephemeral: true }).catch(e => { })
+        return interaction.reply({ content: "<:Yesil:1033666717974548500> ・ Linkin başarıyla sistemden **Silindi!**", ephemeral: true }).catch(e => { })
     }
 })
 
@@ -273,7 +273,7 @@ client.on('interactionCreate', async interaction => {
         	const rr = louritydb.get(`uptimeLinks_${interaction.user.id}`)
  			if (!rr) return interaction.reply({content: "<:Kirmizi:1033666667181527062> ・ **Sisteme eklenmiş bir linkin yok!**", ephemeral: true})
         
-        const links = louritydb.get(`uptimeLinks_${interaction.user.id}`).map(map => `▶️ \`${map}\` `).join("\n")
+        const links = louritydb.get(`uptimeLinks_${interaction.user.id}`).map(map => `<:r_link:1034158510851772567> \`${map}\` `).join("\n")
 
         const linklerimEmbed = new EmbedBuilder()
             .setTitle(`Uptime Linklerin`)
