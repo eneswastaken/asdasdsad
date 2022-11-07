@@ -92,12 +92,12 @@ client.on('interactionCreate', async interaction => {
         let boolean = louritydb.get(`uptimeBoolan_${interaction.guild.id}`)
 
         if (!boolean) return interaction.reply({
-            content: "Uptime sistemi zaten **sıfırlanmış**!",
+            content: "<:Kirmizi:1033666667181527062> ・ Uptime sistemi zaten **Sıfırlanmış**!",
             ephemeral: true
         })
 
         interaction.reply({
-            content: "Uptime sistemi başarıyla **sıfırlandı**!",
+            content: "<:Kirmizi:1033666667181527062> ・ Uptime sistemi başarıyla **Sıfırlandı**!",
             ephemeral: true
         })
 
@@ -143,8 +143,8 @@ client.on('interactionCreate', async interaction => {
 
         const uptimeMesaj = new Discord.EmbedBuilder()
             .setColor("4e6bf2")
-            .setTitle("Uptime Servisi")
-            .setDescription("`・` Projelerinizi uptime etmek için **Ekle** butonuna tıklayın\n`・` Uptime edilen linklerinizi silmek için **Sil** butonuna tıklayın\n`・` Eklenen linklerini görmek için **Linklerim** butonuna tıklayın")
+            .setTitle("Mercy Uptime Servisi")
+            .setDescription("<:r_yesil:1034210144260718633> Projelerinizi uptime etmek için **Ekle** butonuna tıklayın\n<:r_cop:1033688525926830140> Uptime edilen linklerinizi silmek için **Sil** butonuna tıklayın\n<:r_link:1034158510851772567> Eklenen linklerini görmek için **Linklerim** butonuna tıklayın")
             .setThumbnail(server.iconURL({ dynamic: true }))
             .setFooter({ text: "Mercy Uptime" })
 
@@ -160,7 +160,7 @@ client.on('interactionCreate', async interaction => {
 
         let booleann = louritydb.get(`uptimeBoolan_${interaction.guild.id}`)
 
-        if (!booleann) return interaction.reply({ content: "Uptime sistemi aktif değil!", ephemeral: true }).catch(e => { })
+        if (!booleann) return interaction.reply({ content: "<:Kirmizi:1033666667181527062> ・ **Uptime sistemi aktif değil!**", ephemeral: true }).catch(e => { })
 
         await interaction.showModal(lourityModal);
     }
@@ -178,14 +178,14 @@ client.on('interactionCreate', async interaction => {
 
         let link2 = louritydb.fetch(`uptimeLinks_${interaction.user.id}`, [])
 
-        let booster = "1008723132225429505" // Özel rol
+        let booster = "1006517580313399379" // Özel rol
 
         if (!link) return
 
         if (!interaction.member.roles.cache.has(booster)) {
             if (louritydb.fetch(`uptimeLinks_${interaction.user.id}`).length >= 3) {
                 return interaction.reply({
-                    content: "En fazla 3 link ekleyebilirsin!",
+                    content: "<:Kirmizi:1033666667181527062> ・ En fazla **3** link ekleyebilirsin!",
                     ephemeral: true
                 }).catch(e => { })
             }
@@ -194,7 +194,7 @@ client.on('interactionCreate', async interaction => {
         if (interaction.member.roles.cache.has(booster)) {
             if (louritydb.fetch(`uptimeLinks_${interaction.user.id}`).length >= 5) {
                 return interaction.reply({
-                    content: "En fazla 5 link ekleyebilirsin!",
+                    content: "<:Kirmizi:1033666667181527062> ・ En fazla **5** link ekleyebilirsin!",
                     ephemeral: true
                 }).catch(e => { })
             }
@@ -203,7 +203,7 @@ client.on('interactionCreate', async interaction => {
 
         if (link2.includes(link)) {
             return interaction.reply({
-                content: "Bu link zaten sistemde mevcut!",
+                content: "<:Kirmizi:1033666667181527062> ・ **Bu link zaten sistemde mevcut!**",
                 ephemeral: true
             }).catch(e => { })
         }
@@ -226,7 +226,7 @@ client.on('interactionCreate', async interaction => {
         louritydb.push(`uptimeLinks_${interaction.user.id}`, link)
         louritydb.push(`uptimeLinks`, link)
         interaction.reply({
-            content: "Linkin başarıyla uptime sistemine eklendi!",
+            content: "<:Yesil:1033666717974548500> ・ Linkin başarıyla uptime sistemine **Eklendi!**",
             ephemeral: true
         }).catch(e => { })
     }
@@ -239,7 +239,7 @@ client.on('interactionCreate', async interaction => {
 
         let booleann = louritydb.get(`uptimeBoolan_${interaction.guild.id}`)
 
-        if (!booleann) return interaction.reply({ content: "Uptime sistemi aktif değil!", ephemeral: true }).catch(e => { })
+        if (!booleann) return interaction.reply({ content: "<:Kirmizi:1033666667181527062> ・ **Uptime sistemi aktif değil!**", ephemeral: true }).catch(e => { })
 
         await interaction.showModal(lourityModal2);
     }
@@ -252,12 +252,12 @@ client.on('interactionCreate', async interaction => {
         const links = louritydb.get(`uptimeLinks_${interaction.user.id}`)
         let linkInput = interaction.fields.getTextInputValue("baslik1")
 
-        if (!links.includes(linkInput)) return interaction.reply({ content: "Sistemde böyle bir link mevcut değil!", ephemeral: true }).catch(e => { })
+        if (!links.includes(linkInput)) return interaction.reply({ content: "<:Kirmizi:1033666667181527062> ・ **Sistemde böyle bir link mevcut değil!**", ephemeral: true }).catch(e => { })
 
         louritydb.unpush(`uptimeLinks_${interaction.user.id}`, linkInput)
         louritydb.unpush(`uptimeLinks`, linkInput)
 
-        return interaction.reply({ content: "Linkin başarıyla sistemden silindi!", ephemeral: true }).catch(e => { })
+        return interaction.reply({ content: "<:Yesil:1033666717974548500> ・ Linkin başarıyla sistemden **silindi!**", ephemeral: true }).catch(e => { })
     }
 })
 
@@ -268,17 +268,16 @@ client.on('interactionCreate', async interaction => {
 
         let booleann = louritydb.get(`uptimeBoolan_${interaction.guild.id}`)
         
-        if (!booleann) return interaction.reply({ content: "Uptime sistemi aktif değil!", ephemeral: true })
+        if (!booleann) return interaction.reply({ content: "<:Kirmizi:1033666667181527062> ・ **Uptime sistemi aktif değil!**", ephemeral: true })
 
         	const rr = louritydb.get(`uptimeLinks_${interaction.user.id}`)
- 			if (!rr) return interaction.reply({content: "Sisteme eklenmiş bir linkin yok!", ephemeral: true})
+ 			if (!rr) return interaction.reply({content: "<:Kirmizi:1033666667181527062> ・ **Sisteme eklenmiş bir linkin yok!**", ephemeral: true})
         
         const links = louritydb.get(`uptimeLinks_${interaction.user.id}`).map(map => `▶️ \`${map}\` `).join("\n")
 
         const linklerimEmbed = new EmbedBuilder()
             .setTitle(`Uptime Linklerin`)
-            .setDescription(`${links || "Sisteme eklenmiş bir link yok!"}`)
-            .setFooter({ text: "Lourity Code" })
+            .setDescription(`${links || "<:Kirmizi:1033666667181527062> ・ **Sisteme eklenmiş bir link yok!**"}`)
             .setColor("Blurple")
 
         interaction.reply({
