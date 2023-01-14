@@ -12,7 +12,7 @@ const client = new Client({
     partials: PARTIALS,
     retryLimit: 3
 });
-// Lourity gelişmiş uptime botu :)
+// Mercy gelişmiş uptime botu :)
 global.client = client;
 client.commands = (global.commands = []);
 
