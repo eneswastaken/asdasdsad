@@ -1,1 +1,1 @@
-# silinecek
+Youtube Kanalıma Abone Olup Like Atmayı Unutmayınız.. Sevgilerr.
